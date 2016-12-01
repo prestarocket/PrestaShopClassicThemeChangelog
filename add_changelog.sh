@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "For which versions do you want to changelog?"
+echo "Between which versions do you want to generate a changelog?"
 
 echo "Initial version?"
 read initial_version
@@ -10,7 +10,7 @@ if [ ! `git branch --list ${initial_version}` ]
 	exit 0
 fi
 
-echo "Final version?"
+echo "Finale version?"
 read final_version
 if [ ! `git branch --list ${final_version}` ]
 	then
