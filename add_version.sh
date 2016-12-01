@@ -30,10 +30,10 @@ else
 		echo "Moving Classic Theme"
 		mv PrestaShopContent/themes/classic classic && rm -Rf PrestaShopContent
 
-		echo "Adding file to git & push"
+		echo "Adding files to git & push"
 		git add classic/ && git commit -m "Add classic theme $version_variable" && git push origin $version_variable && git checkout dev
 
-		echo "Adding Classic Theme for $version_variable is complete!"
+		echo "Classic Theme for $version_variable added!"
 	fi
 
 fi
