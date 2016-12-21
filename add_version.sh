@@ -11,7 +11,7 @@ if [ `git branch --list ${version_variable}` ]
 else
 	echo "Branch named $version_variable does not exist"
 
-	git fetch origin &&	git checkout -b migrate
+	git fetch origin &&	git checkout -b migrate origin/migrate
 
 	wget -O PrestaShop.zip https://download.prestashop.com/download/old/prestashop_$version_variable.zip && echo "Downloading files..." || echo "This version of PrestaShop ($version_variable) is not valid".
 
@@ -34,6 +34,8 @@ else
 		git add classic/ && git commit -m "Add classic theme $version_variable" && git push origin $version_variable && git checkout dev
 
 		echo "Classic Theme for $version_variable added!"
+
+		git branch -D migrate
 	fi
 
 fi
