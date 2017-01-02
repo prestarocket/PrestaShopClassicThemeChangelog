@@ -23,7 +23,7 @@ else
 		echo "Creation of branch $version_variable"
 		git checkout -b $version_variable
 
-		echo "Decompression of PrestaShop.zip"
+		echo "Zipping PrestaShop.zip"
 		unzip PrestaShop.zip -d PrestaShop && rm PrestaShop.zip
 		unzip PrestaShop/prestashop.zip -d PrestaShopContent && rm -Rf PrestaShop
 
